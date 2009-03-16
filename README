@@ -1,0 +1,30 @@
+==== Summary
+
+Swap allows dynamically replacing and restoring methods.
+Useful as a stubbing device, as it allows unstubbing as well.
+
+==== Examples
+  # We can use ruby2ruby to inspect changes
+  require 'ruby2ruby'
+
+  class User
+    attr_accessor :name
+  end
+  user = User.new
+  user.name = 'martin'
+  puts user.name #=> 'martin'
+
+  puts Ruby2Ruby.translate(User, :name)
+
+  User.swap!(:name) { @name.reverse }
+  puts user.name #=> 'nitram'
+
+  puts Ruby2Ruby.translate(User, :name)
+
+  User.unswap!(:name)
+  puts user.name #=> 'martin'
+
+  puts Ruby2Ruby.translate(User, :name)
+
+
+Calling #unswap! without argument will restore all swapped methods.
