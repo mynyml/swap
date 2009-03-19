@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: swap
 version: !ruby/object:Gem::Version 
-  version: 0.1.0
+  version: 0.1.1
 platform: ruby
 authors: 
 - Martin Aumont
@@ -9,7 +9,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2009-03-16 00:00:00 -04:00
+date: 2009-03-18 00:00:00 -04:00
 default_executable: 
 dependencies: []
 
@@ -26,11 +26,13 @@ files:
 - lib/swap.rb
 - examples
 - examples/simple.rb
+- LICENSE
 - README
 - Rakefile
 - test
 - test/test_swap.rb
 - test/test_helper.rb
+- swap.gemspec
 - TODO
 has_rdoc: true
 homepage: ""

@@ -12,7 +12,7 @@ end
 
 spec = Gem::Specification.new do |s|
   s.name            = 'swap'
-  s.version         = '0.1.0'
+  s.version         = '0.1.1'
   s.summary         = "Ruby lib that allows dynamically replacing and restoring methods."
   s.description     = "Ruby lib that allows dynamically replacing and restoring methods. Organic stubbing/unstubbing."
   s.author          = "Martin Aumont"
