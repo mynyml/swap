@@ -4,6 +4,7 @@ class SwapTest < Test::Unit::TestCase
   context "Swap" do
     before do
       class ::Kitty
+        extend Swappable
         def say() 'ohaie' end
       end
     end

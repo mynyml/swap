@@ -1,4 +1,4 @@
-class Class
+module Swappable
 
   # Swaps a method for another
   #
