@@ -1,7 +1,4 @@
-require 'pathname'
-root  =  Pathname(__FILE__).dirname.parent
-require root.join('test/test_helper')
-require root.join('lib/swap')
+require 'test/test_helper'
 
 class SwapTest < Test::Unit::TestCase
   context "Swap" do
