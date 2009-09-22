@@ -8,6 +8,7 @@
 watch( '^test/test_swap\.rb'   )  { system "ruby -rubygems test/test_swap.rb"  }
 watch( '^lib/swap\.rb'         )  { system "ruby -rubygems test/test_swap.rb"  }
 watch( '^test/test_helper\.rb' )  { system "ruby -rubygems test/test_swap.rb"  }
+watch( '^examples/simple\.rb'  )  { system "ruby -rubygems examples/simple.rb"; puts '-'*30  }
 
 # --------------------------------------------------
 # Signal Handling
