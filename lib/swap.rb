@@ -1,3 +1,12 @@
+
+# Swappable mixin.
+#
+# ===== Examples
+#
+#   Class User
+#     extend Swappable
+#   end
+#
 module Swappable
 
   # Swaps a method for another
@@ -15,10 +24,11 @@ module Swappable
   # self
   #
   # ==== Examples
-  # User.swap!(:name, "@name.reverse")
-  # User.swap!(:name, lambda { @name.reverse })
-  # User.swap!(:name) { @name.reverse }
-  # User.swap!(:name, User.instance_method(:first_name))
+  #
+  #   User.swap!(:name, "@name.reverse")
+  #   User.swap!(:name, lambda { @name.reverse })
+  #   User.swap!(:name) { @name.reverse }
+  #   User.swap!(:name, User.instance_method(:first_name))
   #
   def swap!(name, code=nil, &block)
     name = name.to_sym
@@ -49,18 +59,19 @@ module Swappable
   # self
   #
   # ==== Examples
-  # class User
-  #   attr_accessor :name
-  # end
-  # user = User.new
-  # user.name = 'martin'
-  # puts user.name #=> 'martin'
   #
-  # User.swap!(:name) { @name.reverse }
-  # puts user.name #=> 'nitram'
+  #   class User
+  #     attr_accessor :name
+  #   end
+  #   user = User.new
+  #   user.name = 'martin'
+  #   puts user.name #=> 'martin'
   #
-  # User.unswap!(:name)
-  # puts user.name #=> 'martin'
+  #   User.swap!(:name) { @name.reverse }
+  #   puts user.name #=> 'nitram'
+  #
+  #   User.unswap!(:name)
+  #   puts user.name #=> 'martin'
   #
   def unswap!(name=nil)
     if name
