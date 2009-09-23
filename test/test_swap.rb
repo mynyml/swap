@@ -32,6 +32,14 @@ class SwapTest < Test::Unit::TestCase
         Kitty.swap!(:say, Kitty.instance_method(:bai))
         Kitty.new.say.should be('kthxbai')
       end
+      test "accepts arguments" do
+        Kitty.swap!(:say) {|bar| bar }
+        Kitty.new.say('miaw').should be('miaw')
+      end
+      test "accepts blocks" do
+        Kitty.swap!(:say) {|&bar| bar.call }
+        Kitty.new.say {'miaw'}.should be('miaw')
+      end
     end
     context "reseting original methods" do
       test "restores single method" do
